@@ -29,7 +29,7 @@ public class SaiHeApiRouteBuilder1 extends SpringRouteBuilder {
                         Message in = exchange.getIn();
                         in.setHeader("Content-Type", "text/xml");
                         in.setHeader(Exchange.HTTP_METHOD, "POST");
-                        Object body = in.getBody();
+                        String body = in.getBody(String.class);
                         System.out.println(body);
 
                     }
@@ -41,11 +41,31 @@ public class SaiHeApiRouteBuilder1 extends SpringRouteBuilder {
                     @Override
                     public void process(Exchange exchange) throws Exception {
                         String body = exchange.getMessage().getBody(String.class);
-                        JSONObject jsonObject = JSONUtil.xmlToJson(body);
-                        System.out.println(jsonObject.toStringPretty());
-                        exchange.getMessage().setBody(jsonObject);
+                      //  JSONObject jsonObject = JSONUtil.xmlToJson(body);
+                        System.out.println(body);
+                        exchange.getMessage().setBody(body);
                     }
                 });
+
+
+
+        from("direct:rest")
+                //.marshal().jacksonxml()
+                .process(new Processor() {
+                    @Override
+                    public void process(Exchange exchange) throws Exception {
+                        System.out.println("ccccccccccc");
+                        Message in = exchange.getIn();
+                        in.setHeader("Content-Type", "text/xml");
+                        in.setHeader(Exchange.HTTP_METHOD, "POST");
+                        String body = in.getBody(String.class);
+                        System.out.println(body);
+
+                    }
+                })
+                //.setHeader(Exchange.HTTP_METHOD, constant("POST"))
+                //.setHeader(Exchange.CONTENT_TYPE, constant("text/xml"))
+                .to("http://gg55.irobotbox.com/Api/API_Irobotbox_Orders.asmx?op=GetOrders&bridgeEndpoint=true");
     }
 
 //    @Override

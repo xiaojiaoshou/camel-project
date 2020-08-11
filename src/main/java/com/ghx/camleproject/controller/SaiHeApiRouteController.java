@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/sh")
+@RequestMapping("/controller")
 public class SaiHeApiRouteController  {
 
     @Autowired
@@ -28,7 +28,7 @@ public class SaiHeApiRouteController  {
             "  </soap:Body>\n" +
             "</soap:Envelope>";
 
-    @RequestMapping("/getorders")
+    @RequestMapping("/test")
     public Object getOrders() {
 
         Object result = producerTemplate.sendBody("direct:meelermeeler", ExchangePattern.InOut, parms);
