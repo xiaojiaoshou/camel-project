@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.2.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.ghx</groupId>
+    <artifactId>camle-project</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>camle-project</name>
+    <description>Demo project for Spring Boot</description>
+
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <!--<dependencyManagement>-->
+        <!--<dependencies>-->
+            <!--&lt;!&ndash; Spring Boot BOM &ndash;&gt;-->
+            <!--<dependency>-->
+                <!--<groupId>org.springframework.boot</groupId>-->
+                <!--<artifactId>spring-boot-dependencies</artifactId>-->
+
+                <!--<type>pom</type>-->
+                <!--<scope>import</scope>-->
+            <!--</dependency>-->
+            <!--&lt;!&ndash; Camel BOM &ndash;&gt;-->
+            <!--<dependency>-->
+                <!--<groupId>org.apache.camel.springboot</groupId>-->
+                <!--<artifactId>camel-spring-boot-dependencies</artifactId>-->
+                <!--<type>pom</type>-->
+                <!--<scope>import</scope>-->
+            <!--</dependency>-->
+        <!--</dependencies>-->
+    <!--</dependencyManagement>-->
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-spring-boot-starter</artifactId>
+            <version>2.25.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-soap-starter</artifactId>
+            <version>2.25.2</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.camel/camel-servlet-starter -->
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-servlet-starter</artifactId>
+            <version>2.25.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-cxf-starter</artifactId>
+            <version>2.25.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-http-starter</artifactId>
+            <version>2.25.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-jackson-starter</artifactId>
+            <version>2.25.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-jacksonxml-starter</artifactId>
+            <version>2.25.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-xstream-starter</artifactId>
+            <version>2.25.2</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.3.5</version>
+        </dependency>
+
+
+
+        <!--camel 依赖-->
+        <!--<dependency>-->
+            <!--<groupId>org.apache.camel</groupId>-->
+            <!--<artifactId>camel-spring-boot-starter</artifactId>-->
+            <!--<version>2.18.1</version>-->
+        <!--</dependency>-->
+
+        <!--<dependency>-->
+            <!--<groupId>org.apache.camel</groupId>-->
+            <!--<artifactId>camel-http</artifactId>-->
+            <!--<version>2.18.1</version>-->
+            <!--&lt;!&ndash; use the same version as your Camel core version &ndash;&gt;-->
+        <!--</dependency>-->
+
+        <!--&lt;!&ndash;<dependency>&ndash;&gt;-->
+            <!--&lt;!&ndash;<groupId>org.apache.camel.springboot</groupId>&ndash;&gt;-->
+            <!--&lt;!&ndash;<artifactId>camel-servlet-starter</artifactId>&ndash;&gt;-->
+            <!--&lt;!&ndash;<version>2.18.1</version>           &lt;!&ndash; use the sme version as your Camel core version &ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;</dependency>&ndash;&gt;-->
+        <!--&lt;!&ndash; https://mvnrepository.com/artifact/org.apache.camel/camel-servlet-starter &ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>org.apache.camel</groupId>-->
+            <!--<artifactId>camel-servlet-starter</artifactId>-->
+            <!--<version>2.18.1</version>-->
+        <!--</dependency>-->
+
+        <!--<dependency>-->
+            <!--<groupId>org.apache.camel</groupId>-->
+            <!--<artifactId>camel-servlet</artifactId>-->
+            <!--<version>2.18.1</version>-->
+            <!--&lt;!&ndash; use the same version as your Camel core version &ndash;&gt;-->
+        <!--</dependency>-->
+
+        <!-- https://mvnrepository.com/artifact/org.apache.camel.springboot/camel-servlet-starter -->
+        <!--<dependency>-->
+            <!--<groupId>org.apache.camel.springboot</groupId>-->
+            <!--<artifactId>camel-servlet-starter</artifactId>-->
+            <!--<version>3.0.0</version>-->
+            <!--&lt;!&ndash;<scope>compile</scope>&ndash;&gt;-->
+        <!--</dependency>-->
+
+        <!--<dependency>-->
+            <!--<groupId>org.apache.camel</groupId>-->
+            <!--<artifactId>camel-jackson</artifactId>-->
+            <!--<version>2.19.0</version>-->
+        <!--</dependency>-->
+
+
+        <!--<dependency>-->
+            <!--<groupId>org.apache.camel.springboot</groupId>-->
+            <!--<artifactId>camel-http-starter</artifactId>-->
+            <!--<version>3.0.0</version>-->
+            <!--&lt;!&ndash; use the same version as your Camel core version &ndash;&gt;-->
+        <!--</dependency>-->
+
+        <!--<dependency>-->
+            <!--<groupId>org.apache.camel.springboot</groupId>-->
+            <!--<artifactId>camel-xstream-starter</artifactId>-->
+            <!--<version>3.0.0</version>-->
+            <!--&lt;!&ndash; use the same version as your Camel core version &ndash;&gt;-->
+        <!--</dependency>-->
+
+        <!--<dependency>-->
+            <!--<groupId>org.apache.camel</groupId>-->
+            <!--<artifactId>camel-componentdsl</artifactId>-->
+            <!--<version>3.1.0</version>-->
+        <!--</dependency>-->
+
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <!--<plugin>-->
+                <!--<groupId>org.apache.camel</groupId>-->
+                <!--<artifactId>camel-report-maven-plugin</artifactId>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<phase>process-classes</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>validate</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            <!--</plugin>-->
+        </plugins>
+    </build>
+
+</project>
